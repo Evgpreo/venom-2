@@ -1,5 +1,5 @@
 body{
-	background: #14131A;
+	background: #14131a;
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
 }
@@ -44,4 +44,45 @@ body{
 	line-height: 140%;
 	color: rgba(255, 255, 255, 0.8);
 	max-width: 423px;
+}
+.button {
+	padding: 15px 30px;
+	border: none; /*убираем границы*/
+	border-radius: 5px;
+	text-decoration: none;
+	cursor: pointer; /*меняем курсор при наведении*/
+}
+.button-icon,
+.button-text {
+	display: inline-block;
+	vertical-align: middle;
+}
+.button-text {
+	font-size: 14px;
+	line-height: 16px;
+	margin-left: 10px;
+}
+.button-primary {
+	color: #8D0019;
+	background: #fff;
+}
+.button-link {
+	color: #fff;
+}
+.button-group {
+	margin-top: 70px;
+}
+.venom {
+	position: absolute;
+	top: 0; /*position: absolute; (элемент с абсолютным позиционированием) - при использовании свойства top смещается вверх или вниз относительно верхнего края его предка, при этом предок должен иметь значение position отличное от установленного по умолчанию - static, иначе отсчёт будет вестись относительно верхнего края окна браузера (как при position: fixed;). */
+	right: 0;
+}
+/*.bloood {
+	background-image: url('../img/bloood.png');
+	background-repeat: no-repeat;
+	background-position: top right; /*CSS свойство background-position задает положение (позицию) фонового изображения. Первое значение-горизонтальное положение, а второе значение вертикальное. Если вы указываете только одно ключевое слово, другое значение будет "center"
+}*/
+.bloood {
+	background: url('../img/bloood.png') no-repeat top right, #14131a url('../img/background-photo.jpg') no-repeat center center / 100%;
+
 }
