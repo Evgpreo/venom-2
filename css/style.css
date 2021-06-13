@@ -3,9 +3,20 @@ body{
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
 }
+img {
+	max-width: 100%;
+}
 .container {
-	max-width: 1140px;/*без max-width не работает margin: auto*/
+	/*max-width: 1140px;/*без max-width не работает margin: auto*/
+	width: 90%;/*резиновый эффект*/
 	margin: auto;/*делаем по центру*/
+}
+.venom {
+	position: absolute;
+	top: 0; /*position: absolute; (элемент с абсолютным позиционированием) - при использовании свойства top смещается вверх или вниз относительно верхнего края его предка, при этом предок должен иметь значение position отличное от установленного по умолчанию - static, иначе отсчёт будет вестись относительно верхнего края окна браузера (как при position: fixed;). */
+	right: 0;
+	max-width: 728px;
+	width: 50%;/*venom становится резиновым*/
 }
 .header {
 	display: flex;
@@ -34,16 +45,20 @@ body{
 	display: block;
 	font-size: 24px;
 	line-height: 28px;
-	margin-bottom: 38px;
+	margin-bottom: 2%; /*чтобы резиновое было расстояние при адаптации*/
 	color: rgba(255, 255, 255, 0.8);
 }
 .film-discription {
-	margin-top: 40px;
+	/*margin-top: 40px;*/
+	margin-top: 3%;
 	max-width: 423px;
 	font-size: 16px;
 	line-height: 140%;
 	color: rgba(255, 255, 255, 0.8);
 	max-width: 423px;
+}
+.film-logo {
+	width: 70%;/*лого подстраивается и всегда занимает 70% ширины*/
 }
 .button {
 	padding: 15px 30px;
@@ -70,7 +85,8 @@ body{
 	color: #fff;
 }
 .button-group {
-	margin-top: 70px;
+	/*margin-top: 70px;*/
+	margin-top: 5%; /*заменили margin-top: 70px при адаптации будет всегда 5%*/
 }
 .venom {
 	position: absolute;
@@ -83,6 +99,221 @@ body{
 	background-position: top right; /*CSS свойство background-position задает положение (позицию) фонового изображения. Первое значение-горизонтальное положение, а второе значение вертикальное. Если вы указываете только одно ключевое слово, другое значение будет "center"
 }*/
 .bloood {
-	background: url('../img/bloood.png') no-repeat top right, #14131a url('../img/background-photo.jpg') no-repeat center center / 100%;
+	background: url('../img/bloood.png') no-repeat top right / 70%, #14131a url('../img/background-photo.jpg') no-repeat center center / 100%;
+}
+/*.primary-bg {
+	background: url('../img/background-photo.jpg') no-repeat center center / 100%;
+}*/
+.content {
+	display: flex;
 
+}
+.col {
+	flex-basis: 50%;
+}
+.content-title {
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 42px;
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 20px;
+}
+.content-text {
+	max-width: 423px;
+	font-size: 16px;
+	line-height: 140%;
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 30px;
+}
+.content-subtitle {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 140%;
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 15px;
+	margin-top: 0;
+}
+.content .list {
+	list-style-type: none;
+	padding: 0;
+}
+.column-2 {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	column-gap: 20px;/*указывает величину зазора (промежуток) между колонками элемента*/
+	max-width: 350px;
+}
+.list-item {
+	line-height: 1.5;
+}
+.content .trailer {
+	width: 356px;
+	height: 205px;
+	background: url('/img/trailer.jpg') no-repeat center / contain;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 33px;
+}
+.trailer .play {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	color: #8D0019;
+	background: #fff;
+}
+.trailer .play-icon {
+	transform: translate(17px, 15px);
+}
+.poster-wrapper {
+	display: flex;
+	align-items: flex-start;
+}
+.poster {
+	width: 362px;
+	border-radius: 5px;
+	margin-right: 30px;
+}
+.poster-wrapper .content-subtitle {
+	margin-bottom: 5px;
+}
+.poster-wrapper .list {
+	margin: 0;
+	margin-bottom: 20px;
+}
+.menu-button {
+	display: none;
+}
+.menu-close {
+	display: none;
+}
+
+
+@media (max-width: 1024px) {
+	.content {
+		flex-direction: column;
+		padding-bottom: 5%
+	}
+	.col {
+		margin-bottom: 5%
+	}
+	.header {
+		margin-bottom: 4%
+	}
+	.film {
+		margin-top: 20%
+	}
+}
+@media (max-width: 768px) {
+	.bloood {
+		background: #14131a;
+	}
+	.venom {
+	top: 10%; /*опустили голову venom*/
+	}
+}
+
+@media (max-width: 576px) {
+	.venom {
+		top: 13%;
+		width: 30%;
+		position: fixed;
+	}
+	.nav-menu {
+		/*display: none; скрыли меню*/
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 9; /*меню все перекроет*/
+		width: 100%; /*от родителя*/
+		height: 100%; /*от родителя*/
+		background-color: #fff; /*меню которое будет выезжать блок белого цвета*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		transform: translateX(100%);/*по умолчанию это меню должно быть скрыто, унесли на 100% вправо*/
+		transition: transform 0.2s;/*добавляем плавности к убиранию transform: translateX(100%) меню*/
+	}
+	.nav-menu-item {
+		margin-bottom: 2%;
+		margin-top: 2%;
+		margin-right: 0;
+	}
+	.menu-close {
+		position: fixed; /*открываем кнопку закрыть*/
+		opacity: 0;/*делаем для того, чтобы кнопка закрыть не была видна на кнопке меню после закрытия меню, добавляем opacity: 0; еще и в .is-active opacity: 1*/
+		right: 25px;
+		top: 65px;
+		display: flex;
+		align-items: center;
+		z-index: 10;/*делаем кнопку поверх всех окон, у белого фона z-index: 9 был*/
+		border: none;
+		background-color: #fff;
+		cursor: pointer;
+		transform: translateX(300%); /*убрать кнопку по умолчанию, унести ее на 300% вправо*/
+		transition: transform 0.2s;
+		transition-delay: 0.4s;
+	}
+	.is-active {
+		/*теперь после transition появился класс is-active*/
+		transform: translateX(0%); /*больше никуда не уезжает  и присваиваем его для меню nav-menu и для menu-close, что бы так вешать классы потребуется js*/
+		opacity: 1;
+	}
+	.menu-close-text {
+		margin-right: 10px;
+	}
+	.nav-menu-link {
+		color: #14131a;
+	}
+	.nav {
+	margin-left: auto; /*перекинули меню вправо*/
+	}
+	.menu-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		border: none;
+		background-color: #14131a;
+		cursor: pointer;
+		color: #fff;
+	}
+	.menu-button-text {
+		margin-right: 10px
+	}
+	.button-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	}
+	.film-text {
+		text-align: center;
+	}
+	.poster-wrapper {
+		flex-direction: column;
+	}
+	.poster {
+		margin-bottom: 4%
+		max-width: 350px;
+	}
+	.content .trailer {
+		max-width: 350px;
+		width: 100%;
+	}
+	.poster {
+		margin-right: 0;
+		width: 100%;
+		max-width: 350px;
+	}
+	.column-2 {
+		column-count: 1;
+	}
 }
