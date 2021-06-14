@@ -153,7 +153,7 @@ img {
 	width: 356px;
 	height: 205px;
 	/*background: url(/img/trailer.jpg) no-repeat center / contain;*/
-	background: url(/img/trailer.jpg) no-repeat center / contain;
+	background: url(/trailer.jpg) no-repeat center / contain;
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
