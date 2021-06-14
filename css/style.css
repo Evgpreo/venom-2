@@ -152,8 +152,9 @@ img {
 .content .trailer {
 	width: 356px;
 	height: 205px;
-	/*background: url(/img/trailer.jpg) no-repeat center / contain;*/
-	background: url(../trailer.jpg) no-repeat center / contain;
+	/*background: url(/img/trailer.jpg) no-repeat center / contain; не работает на github*/
+	/*background: url(../trailer.jpg) no-repeat center / contain; работает, перенос в папку где index.html*/
+	background: url(../img/trailer.jpg) no-repeat center / contain;/*работает, файл находиться в папке img*/
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
